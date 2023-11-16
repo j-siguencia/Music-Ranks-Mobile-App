@@ -37,7 +37,7 @@ npm i react-native-gesture-handler
 npm i expo-app-loading
 ```
 
-5) For any API request, you will have to replace the placeholder message in the url with your actual IP address. Replace **InsertIPAddressHere** with your laptop's IP address:
+5) For any API request url, you will have to replace the placeholder message, **InsertIPAddressHere**, with your laptop's IP address:
 ```
  "http://InsertIPAddressHere/Musical-Ranks-React-js-WebApp/index.php/user/login"
 ```
@@ -46,6 +46,7 @@ npm i expo-app-loading
 ```
 npx expo start
 ```
+
 7) With your emulator started and your react-nativve app running, press "a" in your terminal to connect to the react-native app to your emulator.
 8) Rank Away
 
@@ -54,5 +55,5 @@ npx expo start
 
 # Additional Feature
 
-Building off of our webapp version of Musical Ranks, we decided to add a notification feature using the ToastAndroid module that notifies the user of various actions they might take.
+Building off of our webapp version of Musical Ranks, we decided to add a notification feature using the ToastAndroid built-in module that notifies the user of various actions they might take such as a successfull login, sign, ranked song, etc.
 
