@@ -9,18 +9,15 @@ MusicalRanks is a mobile application that allows users to share their musical ta
 Our goal for this homework assignment is to design and implement a single page app with a JavaScript/React frontend. For this homework we are also using the Model-view-controller(MVC) design pattern to create a state transfer API that connects the front
 and back-end of our app. Our app still has the main features that it prides itself in. You are able to Sign Up, Login, and Log out. You can also create rankings for your favorite songs, delete your ratings, view song ratings, and update ratings.
 
-# How can I test this for myself?
 
-In order to set up and run the app you should start by installing and running the app XAMPP and running MySQL and Apache by clicking "Start" in the XAMPP Control Panel. For our backend, you can clone  repository https://github.com/Jadyncode66/Musical-Ranks-React-js-WebApp.git inside the **htdocs** folder inside of XAMPP. Open a terminal and make your way into the folder containing this current repo. Ensure that you have node.js installed. Now, cd into the MusicRanks (our react native app) folder and here is where the magic begins:
-
-# Steps to Visualizing your app
-1) Download Clone the repo below to use as your backend:
+# Steps to Visualizing/Starting your app
+1) Download XAMPP and clone the repo below in the xampp/htdocs folder.This will serve as our backend:
 ```
  git clone https://github.com/Jadyncode66/Musical-Ranks-React-js-WebApp.git
 ```
-2)
-1) Our App uses an Android Emulator in Android Studio. Set up a Pixel 5 API 31 emulator in your Android Studio  application. Run your emulator first. 
-2) In order for your app to work you will need to download these dependences in the same folder as your app:
+2) Follow the pictures of the readMe of that repo to make your backend databases. Once done, open your Control panel for XAMPP and Start Apache and MySQL.
+3) Our App uses an Android Emulator in Android Studio. Set up a Pixel 5 API 31 emulator in your Android Studio  application. Run your emulator first. 
+4) In order for your app to work, you will need to download these dependences in the same folder as your a:
 
 ```
 npm i react
@@ -40,7 +37,7 @@ npm i react-native-gesture-handler
 npm i expo-app-loading
 ```
 
-3) Then to start your app, run : 
+5) Then to start your app, run : 
 
 ```
 npx expo start
