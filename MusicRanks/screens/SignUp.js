@@ -31,7 +31,7 @@ const SignUp = ({ navigation }) => {
   const handleSignUp = async (values) => {
     try {
       const response = await axios.post(
-        "http://172.21.143.201/Musical-Ranks-React-js-WebApp/index.php/user/create",
+        "http://Insert IP Address Here/Musical-Ranks-React-js-WebApp/index.php/user/create",
         {
           username: values.username,
           password: values.password,
@@ -64,10 +64,6 @@ const SignUp = ({ navigation }) => {
             values.password != values.confirmPassword
           ) {
             showToast("Please fill out all the fields.");
-          } else if (values.username.length < 10) {
-            showToast(
-              "Make sure your username is at least 10 characters long!"
-            );
           } else if (values.password.length < 10) {
             showToast(
               "Make sure your password is at least 10 characters long!"

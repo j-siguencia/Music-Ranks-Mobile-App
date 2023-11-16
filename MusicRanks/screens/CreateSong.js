@@ -32,7 +32,7 @@ export default function CreateSong({ username }) {
               rating: userRating,
             };
             const response = await axios.post(
-              "http://172.21.143.201/Musical-Ranks-React-js-WebApp/index.php/song/create",
+              "http://Insert IP Address Here/Musical-Ranks-React-js-WebApp/index.php/song/create",
               SongData
             );
             if (response.data.success) {

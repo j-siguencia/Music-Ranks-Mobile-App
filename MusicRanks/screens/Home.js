@@ -11,7 +11,7 @@ import {
 import { FontAwesome } from "@expo/vector-icons";
 
 import { Rating, AirbnbRating } from "react-native-ratings";
-import { Styles } from "../components/jstyle";
+import { SmallText, Styles } from "../components/jstyle";
 import { UserInterfaceIdiom } from "expo-constants";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { CredentialsContext } from "../components/CredentialsContext";
@@ -51,7 +51,7 @@ const Welcome = ({ navigation }) => {
     setRefreshing(true);
     try {
       const res = await fetch(
-        "http://172.21.143.201/Musical-Ranks-React-js-WebApp/index.php/song/showall"
+        "http://Insert IP Address Here/Musical-Ranks-React-js-WebApp/index.php/song/showall"
       );
       const getdata = await res.json();
       setSongData(getdata);
@@ -67,7 +67,7 @@ const Welcome = ({ navigation }) => {
     const getcategory = async () => {
       try {
         const res = await fetch(
-          "http://172.21.143.201/Musical-Ranks-React-js-WebApp/index.php/song/showall"
+          "http://Insert IP Address Here/Musical-Ranks-React-js-WebApp/index.php/song/showall"
         );
         const getdata = await res.json();
         setSongData(getdata);
@@ -92,7 +92,7 @@ const Welcome = ({ navigation }) => {
   const handleDelete = async (songID) => {
     try {
       const response = await axios.post(
-        "http://172.21.143.201/Musical-Ranks-React-js-WebApp/index.php/song/delete",
+        "http://Insert IP Address Here/Musical-Ranks-React-js-WebApp/index.php/song/delete",
         {
           id: songID,
         }
@@ -114,7 +114,7 @@ const Welcome = ({ navigation }) => {
     console.log(newRating);
     try {
       const response = await axios.post(
-        "http://172.21.143.201/Musical-Ranks-React-js-WebApp/index.php/song/update",
+        "http://Insert IP Address Here/Musical-Ranks-React-js-WebApp/index.php/song/update",
         {
           id: songId,
           rating: newRating,
@@ -250,7 +250,13 @@ const Welcome = ({ navigation }) => {
         alignItems: "center",
       }}
     >
-      <MaterialIcons name="add" size={24} onPress={() => SetModalOpen(true)} />
+      <Styles.SmallText>Create Song</Styles.SmallText>
+      <MaterialIcons
+        name="add"
+        size={24}
+        color="white"
+        onPress={() => SetModalOpen(true)}
+      />
       <FlatList
         data={songData}
         keyExtractor={(item) => item.id.toString()}
@@ -264,6 +270,7 @@ const Welcome = ({ navigation }) => {
             name="close"
             size={24}
             onPress={() => SetModalOpen(false)}
+            color="white"
           />
           <CreateSong username={username} />
         </View>
