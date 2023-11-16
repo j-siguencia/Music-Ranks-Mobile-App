@@ -1,5 +1,12 @@
-import React, { useContext, forwardRef } from 'react';
-import { StyleSheet, Text, View, TextInput, Button, ToastAndroid } from 'react-native';
+import React, { useContext, forwardRef } from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Button,
+  ToastAndroid,
+} from "react-native";
 import {
   SignUpContainer,
   PageTitle,
@@ -8,13 +15,13 @@ import {
   StyleButton,
   AppTitle,
   StyledButtonText,
-} from './../components/style.js';
-import { Styles } from '../components/jstyle';
+} from "./../components/style.js";
+import { Styles } from "../components/jstyle";
 
-import { Formik } from 'formik';
-import axios from 'axios';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import Icon from 'react-native-vector-icons/Octicons';
+import { Formik } from "formik";
+import axios from "axios";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import Icon from "react-native-vector-icons/Octicons";
 
 const SignUp = ({ navigation }) => {
   const showToast = (message) => {
@@ -23,21 +30,23 @@ const SignUp = ({ navigation }) => {
 
   const handleSignUp = async (values) => {
     try {
-      const response = await axios.post('http://172.21.69.237/Musical-Ranks-React-js-WebApp/index.php/user/create', {
-        //const response = await axios.post('http://172.21.143.201/dummyranks/index.php/user/create', {
-        username: values.username,
-        password: values.password,
-        confirm_password: values.confirmPassword,
-      });
+      const response = await axios.post(
+        "http://Insert IP Address here/Musical-Ranks-React-js-WebApp/index.php/user/create",
+        {
+          username: values.username,
+          password: values.password,
+          confirm_password: values.confirmPassword,
+        }
+      );
       if (response.data.success) {
-        showToast('You have succesfully made your account!');
-        navigation.navigate('Login');
+        showToast("You have succesfully made your account!");
+        navigation.navigate("Login");
       } else {
         showToast(response.data.error);
-        console.log('test');
+        console.log("test");
       }
     } catch (error) {
-      showToast('error');
+      showToast("error");
     }
   };
 
@@ -46,21 +55,25 @@ const SignUp = ({ navigation }) => {
       <AppTitle>Musical Ranks</AppTitle>
       <PageTitle> Sign Up</PageTitle>
       <Formik
-        initialValues={{ username: '', password: '', confirmPassword: '' }}
+        initialValues={{ username: "", password: "", confirmPassword: "" }}
         onSubmit={(values) => {
           if (
-            values.username == '' ||
-            values.password == '' ||
-            values.confirmPassword == '' ||
+            values.username == "" ||
+            values.password == "" ||
+            values.confirmPassword == "" ||
             values.password != values.confirmPassword
           ) {
-            showToast('Please fill out all the fields.');
+            showToast("Please fill out all the fields.");
           } else if (values.username.length < 10) {
-            showToast('Make sure your username is at least 10 characters long!');
+            showToast(
+              "Make sure your username is at least 10 characters long!"
+            );
           } else if (values.password.length < 10) {
-            showToast('Make sure your password is at least 10 characters long!');
+            showToast(
+              "Make sure your password is at least 10 characters long!"
+            );
           } else if (!/\d/.test(values.password)) {
-            showToast('Make sure your password contains at least one number!');
+            showToast("Make sure your password contains at least one number!");
           } else {
             handleSignUp(values);
           }
@@ -72,8 +85,8 @@ const SignUp = ({ navigation }) => {
               label="Username"
               placeholder="Username"
               iconName="person"
-              onChangeText={handleChange('username')}
-              onBlur={handleBlur('username')}
+              onChangeText={handleChange("username")}
+              onBlur={handleBlur("username")}
               value={values.username}
             />
             <MytextInput
@@ -81,8 +94,8 @@ const SignUp = ({ navigation }) => {
               placeholder="Password"
               iconName="lock"
               secureTextEntry
-              onChangeText={handleChange('password')}
-              onBlur={handleBlur('password')}
+              onChangeText={handleChange("password")}
+              onBlur={handleBlur("password")}
               value={values.password}
             />
             <MytextInput
@@ -90,8 +103,8 @@ const SignUp = ({ navigation }) => {
               placeholder="Confirm Password"
               iconName="lock"
               secureTextEntry
-              onChangeText={handleChange('confirmPassword')}
-              onBlur={handleBlur('confirmPassword')}
+              onChangeText={handleChange("confirmPassword")}
+              onBlur={handleBlur("confirmPassword")}
               value={values.confirmPassword}
             />
             <Styles.StyledButton title="Sign Up" onPress={handleSubmit}>
@@ -100,7 +113,7 @@ const SignUp = ({ navigation }) => {
           </View>
         )}
       </Formik>
-      <Styles.TextLink onPress={() => navigation.navigate('Login')}>
+      <Styles.TextLink onPress={() => navigation.navigate("Login")}>
         <Styles.SmallText>Already have an account? </Styles.SmallText>
         <Styles.TextLinkContents>Login</Styles.TextLinkContents>
       </Styles.TextLink>
