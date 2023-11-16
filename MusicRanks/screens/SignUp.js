@@ -31,7 +31,7 @@ const SignUp = ({ navigation }) => {
   const handleSignUp = async (values) => {
     try {
       const response = await axios.post(
-        "http://Insert IP Address here/Musical-Ranks-React-js-WebApp/index.php/user/create",
+        "http://172.21.143.201/Musical-Ranks-React-js-WebApp/index.php/user/create",
         {
           username: values.username,
           password: values.password,

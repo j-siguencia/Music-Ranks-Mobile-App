@@ -24,7 +24,7 @@ const Login = ({ navigation }) => {
   const handleLogin = async (values, setSubmitting) => {
     try {
       const response = await axios.post(
-        "http://InsertIPAddressHere/Musical-Ranks-React-js-WebApp/index.php/user/login",
+        "http://172.21.143.201/Musical-Ranks-React-js-WebApp/index.php/user/login",
         {
           username: values.username,
           password: values.password,

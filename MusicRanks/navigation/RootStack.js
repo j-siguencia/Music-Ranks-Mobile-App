@@ -1,13 +1,12 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { CredentialsContext } from '../components/CredentialsContext';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { CredentialsContext } from "../components/CredentialsContext";
 
 //screens
-import Login from './../screens/Login';
-import Welcome from './../screens/Home';
-import Test from './../screens/Test';
-import SignUp from './../screens/SignUp';
+import Login from "./../screens/Login";
+import Welcome from "./../screens/Home";
+import SignUp from "./../screens/SignUp";
 
 const Stack = createNativeStackNavigator();
 

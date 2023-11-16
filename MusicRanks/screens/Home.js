@@ -51,7 +51,7 @@ const Welcome = ({ navigation }) => {
     setRefreshing(true);
     try {
       const res = await fetch(
-        "http://InsertIPAddressHere/Musical-Ranks-React-js-WebApp/index.php/song/showall"
+        "http://172.21.143.201/Musical-Ranks-React-js-WebApp/index.php/song/showall"
       );
       const getdata = await res.json();
       setSongData(getdata);
@@ -67,7 +67,7 @@ const Welcome = ({ navigation }) => {
     const getcategory = async () => {
       try {
         const res = await fetch(
-          "http://InsertIPAddressHere/Musical-Ranks-React-js-WebApp/index.php/song/showall"
+          "http://172.21.143.201/Musical-Ranks-React-js-WebApp/index.php/song/showall"
         );
         const getdata = await res.json();
         setSongData(getdata);
@@ -92,7 +92,7 @@ const Welcome = ({ navigation }) => {
   const handleDelete = async (songID) => {
     try {
       const response = await axios.post(
-        "http://InsertIPAddressHere/Musical-Ranks-React-js-WebApp/index.php/song/delete",
+        "http://172.21.143.201/Musical-Ranks-React-js-WebApp/index.php/song/delete",
         {
           id: songID,
         }
@@ -114,7 +114,7 @@ const Welcome = ({ navigation }) => {
     console.log(newRating);
     try {
       const response = await axios.post(
-        "http://InsertIPAddressHere/Musical-Ranks-React-js-WebApp/index.php/song/update",
+        "http://172.21.143.201/Musical-Ranks-React-js-WebApp/index.php/song/update",
         {
           id: songId,
           rating: newRating,
