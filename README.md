@@ -37,13 +37,17 @@ npm i react-native-gesture-handler
 npm i expo-app-loading
 ```
 
-5) Then to start your app, run : 
+5) For any API request, you will have to replace the placeholder message in the url with your actual IP address. Replace **InsertIPAddressHere** with your laptop's IP address:
+```
+ "http://InsertIPAddressHere/Musical-Ranks-React-js-WebApp/index.php/user/login"
+```
+6) Then to start your app, run : 
 
 ```
 npx expo start
 ```
-4) With your emulator started and your react-nativve app running, press "a" in your terminal to connect to the react-native app to your emulator.
-5) Rank Away
+7) With your emulator started and your react-nativve app running, press "a" in your terminal to connect to the react-native app to your emulator.
+8) Rank Away
 
 
 
